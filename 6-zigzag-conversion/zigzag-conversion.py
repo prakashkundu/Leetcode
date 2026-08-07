@@ -9,5 +9,5 @@ class Solution(object):
         for i, char in enumerate(s):
             r[t[i % len(t)]] += char
 
-        return ''.join(r)
+        return "".join(r)
         
