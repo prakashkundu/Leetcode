@@ -4,16 +4,13 @@ class Solution(object):
         :type nums1: List[int]
         :rtype: bool
         """
-        odd=[]
-        for x in nums1:
-            if(x%2==1):
-                odd.append(x)
-        if(len(odd)==0):
+        # Step 1: Find the minimum element in the array
+        min_val = min(nums1)
+        
+        # Step 2: If the minimum value is odd, it's always possible
+        if min_val % 2 != 0:
             return True
-        smallest_odd=min(odd)
-        for x in nums1:
-            if (x%2==0 and x<smallest_odd):
-                return False
-        return True
-
+            
+        # Step 3: If the minimum value is even, all elements must be even
+        return all(x % 2 == 0 for x in nums1)
         
